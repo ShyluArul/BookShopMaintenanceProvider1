@@ -1,0 +1,7 @@
+#mysql base image
+FROM mysql
+# Create database
+ENV MYSQL_DATABASE bookshopapp
+# Add the content of the sql-scripts/ directory to your image
+# All scripts in docker-entrypoint-initdb.d/ will automatically execute during container startup
+COPY ./sql-scripts/ /docker-entrypoint-initdb.d/
