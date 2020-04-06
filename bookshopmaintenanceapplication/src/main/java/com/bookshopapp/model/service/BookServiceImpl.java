@@ -25,14 +25,14 @@ public class BookServiceImpl implements BookService {
 	}
 	@Override
 	public Optional<Book> findBookById(Long id) {
-		// TODO Auto-generated method stub
+		
 		return bookRepo.findById(id);
 	}
 
 
 	@Override
 	public Optional<Book> findBybookName(String bookName) {
-		// TODO Auto-generated method stub
+		
 		return bookRepo.findBybookName(bookName);
 	}
 
