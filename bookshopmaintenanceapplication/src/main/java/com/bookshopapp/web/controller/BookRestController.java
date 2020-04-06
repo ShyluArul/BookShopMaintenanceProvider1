@@ -30,7 +30,7 @@ public BookRestController(BookService bookService) {
 		this.bookService = bookService;
 	}
 	@GetMapping(path="/book", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Book>>getAllStudents(){
+	public ResponseEntity<List<Book>>getAllBooks(){
 		return new  ResponseEntity<List<Book>>(bookService.getAllBooks(),HttpStatus.OK);
 	}
 	
