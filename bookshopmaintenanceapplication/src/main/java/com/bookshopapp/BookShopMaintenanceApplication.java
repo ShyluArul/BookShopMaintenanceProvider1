@@ -20,10 +20,9 @@ public class BookShopMaintenanceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		// TODO Auto-generated method stub
-		/*
-		 * Book b1 = new Book("Head First Java", 498, 2005); bookRepo.save(b1); Book b2
-		 * = new Book("Spring", 333, 2008); bookRepo.save(b2);
+	        /*
+		 * Book b1 = new Book("Head First Java", 498, "Raj", 2005); bookRepo.save(b1);
+		 * Book b2= new Book("Spring", 333, "Mhetha", 2008); bookRepo.save(b2);
 		 */
 	}
 }
