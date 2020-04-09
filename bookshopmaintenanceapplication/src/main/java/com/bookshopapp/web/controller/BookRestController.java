@@ -19,7 +19,6 @@ import com.bookshopapp.model.service.BookService;
 @RestController
 @RequestMapping(path = "/api")
 public class BookRestController {
-	
 	private BookService bookService;
 	@Autowired
 	public BookRestController(BookService bookService) {
