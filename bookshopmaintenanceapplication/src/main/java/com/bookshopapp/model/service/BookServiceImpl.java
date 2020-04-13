@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public Book updateBook(Long id, Book book) {
-		Book bookToBeUpdated = bookRepo.findById(id).orElseThrow(BookNotFoundEx::new);
+		Book bookToBeUpdated = bookRepo.findById(id).orElseThrow(BookNotFoundException::new);
 		bookToBeUpdated.setBookPrice(book.getBookPrice());
 		bookToBeUpdated.setPublishingYear(book.getPublishingYear());
 		bookToBeUpdated.setBookName(book.getBookName());
