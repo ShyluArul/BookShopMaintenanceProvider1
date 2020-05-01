@@ -1,5 +1,4 @@
 package com.bookshopapp;
-
 import java.util.Arrays;
 import java.util.Map;
 import org.apache.http.HttpRequest;
