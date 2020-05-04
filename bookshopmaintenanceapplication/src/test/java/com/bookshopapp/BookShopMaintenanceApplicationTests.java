@@ -1,6 +1,5 @@
 package com.bookshopapp;
 import java.util.Arrays;
-import java.util.Map;
 import org.apache.http.HttpRequest;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -12,7 +11,6 @@ import com.bookshopapp.model.service.BookService;
 import au.com.dius.pact.provider.junit.IgnoreNoPactsToVerify;
 import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
-import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.TargetRequestFilter;
 import au.com.dius.pact.provider.junit.VerificationReports;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
@@ -52,25 +50,5 @@ public class BookShopMaintenanceApplicationTests {
 	public void printTheRequestHeaders(HttpRequest request) {
 		Arrays.asList(request.getAllHeaders())
 			.forEach(header -> System.out.println(header.getName() + "->" + header.getValue()));
-	}
-
-	@State("SomeState")
-	public void withSomeState() {
-		System.out.println("something with state");
-		BookService bookservice = applicationContext.getBean(BookService.class);
-		bookservice.addBook(new Book("C++", 324, "Manoj", 2001));
-	}
-
-	@State("SomeStateWithMap")
-	public void withSomeStateAndMap(Map<String, Object> params) {
-		System.out.println("something with state");
-		params.forEach((key, value) -> System.out.println(key + " -> " + value));
-		BookService bookservice = applicationContext.getBean(BookService.class);
-		@SuppressWarnings("unchecked")
-		Map<String, Object> values = (Map<String, Object>) params.get("MyKey");
-		Book bookFromParseInPactState = new Book(values.get("bookName").toString(),
-				Double.parseDouble(values.get("bookPrice").toString()), values.get("publisherName").toString(),
-				Integer.parseInt(values.get("publishingYear").toString()));
-		bookservice.addBook(bookFromParseInPactState);
 	}
 }
